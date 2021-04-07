@@ -1,0 +1,23 @@
+<div id="login-component" class="primary-bg-color">
+  <h1 id="brand-name">MMR Fitness Center</h1>
+  <div class="welcome-group">
+    <h2 class="text-primary" id="login-welcome"> Welcome Back! </h2>
+    <h3 class="text-secondary"> Login to your account </h3>
+  </div>
+
+  <form [formGroup]="loginForm" class="form">
+    <label for="emailId">
+      <input type="text" class="input-primary" placeholder="Email" formControlName="email">
+    </label>
+    <label for="emailId">
+      <input type="password" class="input-primary" placeholder="Password" formControlName="password">
+    </label>
+    <a routerLink="/forgot-password" id="forgot-password">Forgot password?</a>
+    <button class="button-primary" (click)="submit()">
+      <mat-icon aria-hidden="false" aria-label="loading icon" id="loading-icon" *ngIf="loading">loop</mat-icon>
+      <span *ngIf="!loading">Log In</span>
+    </button>
+  </form>
+
+</div>
+<router-outlet></router-outlet>
